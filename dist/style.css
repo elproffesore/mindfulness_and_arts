@@ -1,0 +1,27 @@
+html{
+  background-color: #eff0f3;
+  font-family: 'Bowlby One SC', cursive;
+}
+img{
+  position: absolute;
+  left: 42.5%;
+  top: 100%
+}
+svg{
+  position: absolute;
+  left: 30%
+}
+path{
+  fill: none;
+  stroke: #000;
+  stroke-width: 5px
+}
+.circle{
+  position: absolute;
+  border: 5px solid black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: black
+
+}
