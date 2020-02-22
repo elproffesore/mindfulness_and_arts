@@ -1,11 +1,14 @@
 <template>
 <div class="main">
-  <div class="buttons">
-    <button v-on:click="new_view('ressources')">Ressources</button>
-    <button v-on:click="new_view('information')">Information</button>
-    <button v-on:click="new_view('impressum')">Impressum</button>
+  <div class="head">
+    <div class="buttons">
+      <div  class="button" v-on:click="new_view('start')"><a>Start</a></div>
+      <div  class="button" v-on:click="new_view('ressources')"><a>Ressources</a></div>
+      <div  class="button" v-on:click="new_view('information')"><a>Information</a></div>
+      <div  class="button" v-on:click="new_view('impressum')"><a>Impressum</a></div>
+    </div>
+    <h1 v-on:click="new_view('start')">Mindfulness in Education</h1>
   </div>
-  <h1 v-on:click="new_view('start')">Mindfulness in Education</h1>
   <div class="components">
     <Start v-if="view=='start'"></Start>
     <Ressources v-if="view=='ressources'"></Ressources>
@@ -27,8 +30,10 @@ export default {
     Information,
     Impressum
   },
-  created:function(){
-    window.addEventListener('scroll', () => {this.$store.dispatch("update_percent")})
+  created: function() {
+    window.addEventListener('scroll', (e) => {
+      this.$store.dispatch("update_percent")
+    })
   },
   methods: {
     new_view(view) {
@@ -51,26 +56,43 @@ h1 {
   cursor: pointer;
 }
 
-button {
-  background-color: #ff8e3c;
+.button {
   color: #0d0d0d;
-  border: 2px solid black;
-  border-radius: 5px;
+  background: none;
   font-family: 'Bowlby One SC', cursive;
   font-size: 12pt;
   padding: 0px 10px 0px 10px;
-  margin: 1vh 5vw 1vh 5vw;
+  margin: 1vh 3vw 1vh 3vw;
+  cursor:pointer
 
 }
-
-button:hover {
-  background-color: #e6843e;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+.button > a{
+  position:relative
 }
-.main{
+.button > a:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffb74b;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.button > a:hover:before {
+  cursor:pointer;
+ visibility: visible;
+ -webkit-transform: scaleX(1);
+ transform: scaleX(1);
+}
+.main {
   margin-top: 5vh
 }
+
 .buttons {
   display: flex;
   justify-content: center

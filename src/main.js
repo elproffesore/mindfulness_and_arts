@@ -16,12 +16,12 @@ export const store = new Vuex.Store({
       state.view = view;
     },
     update_percent(state){
-      let scrollPos = window.scrollY
-      let winHeight = window.innerHeight
-      let docHeight = document.documentElement.scrollHeight
-      let perc = Math.floor(100 * (scrollPos /  winHeight))
-      state.percent = perc
-      console.log(perc)
+      var perc =  ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100);
+
+      const scrolled = window.scrollY ;
+      const total = document.documentElement.scrollHeight -window.innerHeight
+      const percentage = (scrolled/total)*100
+      state.percent = percentage
     }
   },
   actions: {

@@ -1,7 +1,7 @@
 <template>
-<div>
-  <img src="figures.svg" alt="new" width="300px" x="500px" y="2000px">
-  <svg viewBox="0 0 1500 2000">
+<div class="start_page">
+  <!-- <img src="figures.svg" alt="new" width="300px" x="500px" y="2000px"> -->
+  <!-- <svg viewBox="0 0 1500 2000">
     <g >
       <path class="path" xmlns="http://www.w3.org/2000/svg"
         d="M587.48 605.91C487.62 556.77 398.46 546.86 320 576.19C202.31 620.17 100.07 563.11 66.78 525.07C33.5 487.03 56.08 384.79 98.88 361.01C127.41 345.16 207.46 345.16 339.02 361.01C505.45 361.81 594.22 346.35 605.31 314.65C621.96 267.1 585.1 131.57 490 161.29C426.6 181.11 286.71 180.31 70.35 158.92" />
@@ -9,7 +9,7 @@
   </svg>
   <div class="circle">
 
-  </div>
+  </div> -->
   <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="cloud1">
     <g transform="translate(-19.348-8.325)" >
       <path
@@ -45,11 +45,10 @@ export default {
 </script>
 
 <style module>
-svg {
-  width: 10vw
+.start_page{
+  height:2000px
 }
-
-#cloud1 {
+/* #cloud1 {
   animation: movement 20s linear infinite;
   margin-top: 5%;
   margin-left: 30%;
@@ -64,7 +63,6 @@ svg {
   opacity: 80%;
   margin-left: 50%;
   z-index: -1;
-  position: absolute
 }
 
 #cloud3 {
@@ -73,7 +71,6 @@ svg {
   margin-left: 75%;
   opacity: 60%;
   z-index: -1;
-  position: absolute;
   transform: scale(0.75)
 }
 
@@ -89,5 +86,5 @@ svg {
   100% {
     transform: scale(1)
   }
-}
+} */
 </style>
