@@ -5,15 +5,13 @@
       <div  class="button" v-on:click="new_view('start')"><a>Start</a></div>
       <div  class="button" v-on:click="new_view('ressources')"><a>Ressources</a></div>
       <div  class="button" v-on:click="new_view('information')"><a>Information</a></div>
-      <div  class="button" v-on:click="new_view('impressum')"><a>Impressum</a></div>
     </div>
-    <h1 v-on:click="new_view('start')">Mindfulness in Education</h1>
+    <h1 class="header"v-on:click="new_view('start')">Arts and Mindfulness <br> in Education</h1>
   </div>
   <div class="components">
     <Start v-if="view=='start'"></Start>
     <Ressources v-if="view=='ressources'"></Ressources>
     <Information v-if="view=='information'"></Information>
-    <Impressum v-if="view=='impressum'"></Impressum>
   </div>
 </div>
 </template>
@@ -21,14 +19,12 @@
 import Start from "./components/Start.vue";
 import Ressources from "./components/Ressources.vue";
 import Information from "./components/Information.vue";
-import Impressum from "./components/Impressum.vue";
 export default {
   name: "app",
   components: {
     Start,
     Ressources,
-    Information,
-    Impressum
+    Information
   },
   created: function() {
     window.addEventListener('scroll', (e) => {
@@ -50,7 +46,7 @@ export default {
 <style module>
 h1 {
   text-align: center;
-  font-size: 45pt;
+  font-size: 40pt;
   color: #0d0d0d;
   margin: 10px 0px 10px 0px;
   cursor: pointer;
@@ -92,7 +88,9 @@ h1 {
 .main {
   margin-top: 5vh
 }
-
+.header{
+  font-family: 'Bowlby One SC', cursive;
+}
 .buttons {
   display: flex;
   justify-content: center
