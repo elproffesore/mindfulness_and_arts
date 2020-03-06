@@ -50,6 +50,7 @@ h1 {
   color: #0d0d0d;
   margin: 10px 0px 10px 0px;
   cursor: pointer;
+  text-shadow: 2px 2px 5px rgb(215, 215, 215);
 }
 
 .button {

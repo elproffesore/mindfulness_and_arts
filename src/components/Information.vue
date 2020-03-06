@@ -1,8 +1,8 @@
 <template>
 <div>
   <div class="text">
-    <h2 class="header" v-bind:style="{opacity: 1-(percent/100)}">The Problem</h2>
-    <p v-bind:style="{opacity: 1-(percent/100)}">
+    <h2 class="header" v-bind:style="{opacity: 1-(percent)}">The Problem</h2>
+    <p v-bind:style="{opacity: 1-(percent)}">
       Today a lot of people feel more stressed and more people suffer from stress and anxiety symptoms.
 
       Also kids are affected of this. Nowadays, kids have a lot of stimulus and in consequence, they are always distracted
@@ -17,8 +17,8 @@
 
       In consequence they often can't concentrate while they teach and sometimes have burnout syndromes due to high pressure which is produced by their fast paced environment.
     </p>
-    <h2 class="header" v-bind:style="{opacity: (percent-10)/100}">The Solution</h2>
-    <p v-bind:style="{opacity: (percent-10)/100}">
+    <h2 class="header" v-bind:style="{opacity: (percent-0.10)}">The Solution</h2>
+    <p v-bind:style="{opacity: (percent-0.10)}">
       In preschool, children at the age 3-6 years old are so nervous because of a lot of activities and changes happening during the day. So, how can we take the advantage of that time to relax them?
 
       Mindfulness is a tool that we can usually use to gain the full attention and concentration from children, it can be useful to improve the process and

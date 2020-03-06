@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
 
       const scrolled = window.scrollY ;
       const total = document.documentElement.scrollHeight -window.innerHeight
-      const percentage = (scrolled/total)*100
+      const percentage = (scrolled/total)
       state.percent = percentage
     }
   },
