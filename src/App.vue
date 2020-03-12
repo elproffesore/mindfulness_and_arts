@@ -6,7 +6,7 @@
       <div  class="button" v-on:click="new_view('ressources')"><a>Ressources</a></div>
       <div  class="button" v-on:click="new_view('information')"><a>Information</a></div>
     </div>
-    <h1 class="header"v-on:click="new_view('start')">Arts and Mindfulness <br> in Education</h1>
+    <h1 class="header"v-on:click="new_view('start')">Arts and Mindfulness in Education</h1>
   </div>
   <div class="components">
     <Start v-if="view=='start'"></Start>
@@ -44,9 +44,13 @@ export default {
 }
 </script>
 <style module>
+body{
+  background: white;
+  margin:0
+}
 h1 {
   text-align: center;
-  font-size: 40pt;
+  font-size: 35pt;
   color: #0d0d0d;
   margin: 10px 0px 10px 0px;
   cursor: pointer;
@@ -95,5 +99,8 @@ h1 {
 .buttons {
   display: flex;
   justify-content: center
+}
+.components{
+  scroll-snap-type: y mandatory;
 }
 </style>

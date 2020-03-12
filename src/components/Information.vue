@@ -61,4 +61,15 @@ p{
   font-family: 'Open Sans';
   font-size: 14pt;
 }
+@media only screen and (max-width:700px){
+  .text {
+    text-align:center;
+    display: grid;
+    margin: 2vh 5vh 20vh 5vh;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-column-gap: 100px;
+  }
+}
 </style>
