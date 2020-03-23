@@ -1,12 +1,17 @@
 <template>
 <div class="start_page">
   <svg viewBox="0 0 1200 2500">
-    <path id="path" xmlns="http://www.w3.org/2000/svg" d="M-10,150  Q1050,250 1000,550 T 400,1000 T 700,1400 T 750,1950"  fill="none" />
+    <path id="path" xmlns="http://www.w3.org/2000/svg" d="M-10,150  Q1050,250 1000,550 T 400,1000 T 700,1400 T 755,1940"  fill="none" />
   </svg>
   <div class="paragraphs">
     <transition name="fade">
-        <p v-if="percent > 0.15" id="paragraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. </p>
+        <p v-if="percent > 0.10" id="paragraph1">
+          <q>
+            <i>In today's rush, we all think too much - seek too much - want too much - and forget about the joy of just being.
+            </i>
+          </q>
+            - Eckhart Tolle
+        </p>
     </transition>
 
     <transition name="fade">
@@ -29,7 +34,7 @@
   </div>
   </transition>
   <footer>
-    <img src="pics/hill_new_2.svg" />
+    <img src="pics/hill.svg" />
     <p>AMiE is a Project from the European Project Semester of AP University Antwerp</p>
   </footer>
 </div>
@@ -142,7 +147,6 @@ footer > img {
   position: absolute;
   bottom:0px;
   left:-2px;
-  width: 102vw;
 }
 
 .fade-enter-active,

@@ -2,16 +2,15 @@
   <div class="ressources">
 
 
-    <button id="back" @click="turnCarouselBack()">back</button>
+    <button id="back" @click="turnCarouselBack()"> &#x279C; </button>
 
     <div class="wrapper">
         <div class="card" v-for="(card,index) in cards" v-bind:id=" 'card' +index" >
             <img v-bind:src="card.picture" alt="cards picture">
-            <h2 class="header">{{card.name}}</h2>
         </div>
     </div>
 
-    <button id="next" @click="turnCarouselNext()">next</button>
+    <button id="next" @click="turnCarouselNext()"> &#x279C; </button>
 
 
   </div>
@@ -26,11 +25,11 @@
       return{
         selected:0,
         cards:[
-           {name:"Mindfulness \r Eating",picture:"./pics/mindeating.jpeg"},
-           {name:"Mindfulness \r Fun",picture:"./pics/mindeating.jpeg"},
-           {name:"Mindfulness \r Safari",picture:"./pics/mindeating.jpeg"},
-           {name:"Mindfulness \r Sitting",picture:"./pics/mindeating.jpeg"},
-           {name:"Mindfulness \r Squatting",picture:"./pics/mindeating.jpeg"}
+           {picture:"./pics/front.png"},
+           {picture:"./pics/example.jpeg"},
+           {picture:"./pics/example.jpeg"},
+           {picture:"./pics/example.jpeg"},
+           {picture:"./pics/example.jpeg"}
       ]
     }
   },
@@ -83,45 +82,56 @@
   #back{
     z-index:1000;
     position:absolute;
-    top:45%;
-    left:10%;
+    top:40%;
+    left:27%;
+    transform: rotate(180deg);
   }
   #next{
     z-index:1000;
     position:absolute;
-    top:45%;
-    right:10%;
+    top:40%;
+    right:27%;
+  }
+  button{
+    border:none;
+    background-color: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2vw;
+    padding: 0;
+  }
+  button:hover{
+    color: rgb(62, 62, 62)
   }
   .wrapper{
     position:relative;
-    left: calc(50% - (1000px / 2));
-    width:1000px;
-    height:503px;
+    left: calc(50vw - (100vw / 2));
+    width:100vw;
+    height: 100%;
     overflow:hidden;
   }
   .card{
     position:absolute;
-    left:calc(50% - (325px / 2));
+    left:calc(50% - (20vw / 2));
+    top:calc(50% - (30vw / 2));
     background-color:rgb(255, 255, 255);
-    box-shadow:7px 7px 5px rgb(210, 210, 210);
-    height:475px;
-    width:325px;
+    box-shadow:5px 5px 2px rgb(164, 164, 164);
+    height:30vw;
+    width:20vw;
     text-align:center;
-    border: 1.5px solid black;
-    border-radius: 5px;
+    border: 1.75px solid black;
+    border-radius: 15px;
     perspective: 600px;
     transition: transform 1s, opacity 1s;
     transform-style: preserve-3d;
-    margin: 0px 10px 0px 10px;
-  }
-  .card:hover{
-    background-color: green;
   }
   .card:not(:first-child){
     opacity:0;
   }
   .card > img{
-    width: 100%
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
   }
   .card > p{
     padding:25px;

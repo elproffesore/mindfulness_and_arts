@@ -46,7 +46,7 @@ export default {
 <style module>
 body{
   background: white;
-  margin:0
+  margin:0;
 }
 h1 {
   text-align: center;
@@ -90,9 +90,6 @@ h1 {
  -webkit-transform: scaleX(1);
  transform: scaleX(1);
 }
-.main {
-  margin-top: 5vh
-}
 .header{
   font-family: 'Bowlby One SC', cursive;
 }
@@ -100,7 +97,12 @@ h1 {
   display: flex;
   justify-content: center
 }
+.head{
+  padding-top: 5vh;
+  height: 20vh
+}
 .components{
+  height:70vh;
   scroll-snap-type: y mandatory;
 }
 </style>
