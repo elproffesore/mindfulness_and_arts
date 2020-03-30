@@ -50,7 +50,7 @@ export default {
   justify-content: center;
   grid-column-gap: 100px;
 }
-p{
+.text > p{
   align-self: center;
   text-align:justify;
   font-family: 'Open Sans';

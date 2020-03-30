@@ -1,0 +1,24 @@
+.gg-pin {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: rotate(45deg) scale(1.2);
+    width: 20px;
+    height: 20px;
+    border-radius: 100% 100% 0 100%;
+    border: 2px solid black;
+    margin:auto
+}
+
+.gg-pin::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid;
+    top: 4px;
+    left: 4px;
+    border-radius: 40px
+}

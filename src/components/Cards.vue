@@ -1,78 +1,98 @@
 <template>
-<div class="ressources">
-  <div class="wrapper-cards">
-    <button id="back" @click="turnCarouselBack()">
-      <svg viewBox="0 0 20 20">
-        <polygon points="0,10 20,20 20,0" fill="black" />
-      </svg>
-    </button>
+<div class="cards">
+  <button id="back" @click="turnCarouselBack()">
+    <svg viewBox="0 0 20 20">
+      <polygon points="0,10 20,20 20,0" fill="black" />
+    </svg>
+  </button>
 
-    <div class="card" v-for="(card,index) in cards" v-bind:id="'card'+index">
-
-
-      <div class="card-instruction">
-        <section>
-          <h2>Instructions</h2>
-          <p v-for="(instruction,indexInstruction) in card.instructions">
-            {{indexInstruction+1}}. {{instruction}}
-          </p>
-        </section>
-        <p> Hover to see more details </p>
-      </div>
+  <div class="card" v-for="(card,index) in cards" v-bind:id="'card'+index">
 
 
-      <div class="card-information">
-        <div class="card-information-card">
-          <img class="card-front" v-bind:src="card.picture" alt="cards picture">
-        </div>
-        <div class="card-information-text">
-          <section>
-            <h2>Instructions</h2>
-          </section>
-        </div>
-      </div>
-
-
+    <div class="card-instruction">
+      <section>
+        <h2>Instructions</h2>
+        <p v-for="instruction in card.instructions">
+          {{instruction}}
+        </p>
+      </section>
+      <p class="hover-information"> Hover to see more details </p>
     </div>
 
-    <button id="next" @click="turnCarouselNext()">
-      <svg viewBox="0 0 20 20">
-        <polygon points="0,0 20,10 0,20" fill="black" />
-      </svg>
-    </button>
+
+    <div class="card-information">
+      <div class="card-information-card">
+        <img class="card-front" v-bind:src="card.picture" alt="cards picture">
+      </div>
+      <div class="card-information-text">
+        <section>
+          <h2>Information</h2>
+          <div class="information">
+            <p>{{card.information}}</p>
+          </div>
+          <div class="icons">
+            <div>
+              <i class="gg-pin"></i>
+              <p>Outside</p>
+            </div>
+            <div>
+              <i class="gg-time"></i>
+              <p>~15min</p>
+            </div>
+            <div>
+              <i class="gg-smile"></i>
+              <p>6+ years</p>
+            </div>
+            <a v-bind:href="card.link" download>
+              <i class="gg-software-download"></i>
+              <p>Card</p>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
   </div>
+
+  <button id="next" @click="turnCarouselNext()">
+    <svg viewBox="0 0 20 20">
+      <polygon points="0,0 20,10 0,20" fill="black" />
+    </svg>
+  </button>
 </div>
 </template>
 
 
 <script>
 export default {
-  name: "ressources",
+  name: "cards",
   data() {
     return {
       selected: 0,
       cards: [{
-          picture: "./pics/front.png",
-          instructions:[
+          name:"photo",
+          link:"./downloads/Mindfulness_Photography.png",
+          picture: "./pics/photo_front.png",
+          instructions: [
             "Take a camera",
             "Look around you, take deep breaths and listen carefully to the sounds around you.",
             "Take photos of everything that catches your attention"
           ],
-          information:{
+          information: "This excercise should sharpen the eye of the kids to notice \n new things around them"
+        },
+        {
+          name:"clay",
+          link:"./downloads/clay.png",
+          picture: "./pics/clay_front.png",
+          instructions: [
+            "Take a camera",
+            "Look around you, take deep breaths and listen carefully to the sounds around you.",
+            "Take photos of everything that catches your attention"
+          ],
+          information: {
 
           }
-        },
-        {
-          picture: "./pics/example.jpeg"
-        },
-        {
-          picture: "./pics/example.jpeg"
-        },
-        {
-          picture: "./pics/example.jpeg"
-        },
-        {
-          picture: "./pics/example.jpeg"
         }
       ]
     }
@@ -117,7 +137,7 @@ export default {
 </script>
 
 <style module >
-.ressources {
+.cards {
   position: relative;
   -webkit-scrollbar: none;
   overflow: hidden;
@@ -133,6 +153,7 @@ export default {
   top: calc(30vh - (20px / 2));
   left: 10%;
 }
+
 #next {
   z-index: 1000;
   position: absolute;
@@ -172,11 +193,15 @@ button:hover>svg>polygon {
   z-index: 0;
   transition: transform 1s, opacity 1s;
 }
+
+#card0 {
+  opacity: 1;
+  z-index: 1000;
+}
+
 .card:hover .card-information {
   width: 100%
 }
-
-
 
 .card-information {
   position: absolute;
@@ -186,7 +211,8 @@ button:hover>svg>polygon {
   transition: width 0.4s;
   height: 100%;
   overflow: hidden;
-  background-color:white
+  background-color: white;
+  z-index: 1000
 }
 
 .card-information-card {
@@ -194,13 +220,14 @@ button:hover>svg>polygon {
   position: absolute;
   width: calc(70vw * 0.3);
 }
-.card-information-card::after{
-  content:"";
-  position:absolute;
-  top:10%;
-  right:-5px;
-  height:80%;
-  border-left: 1.5px solid rgba(0,0,0,0.2)
+
+.card-information-card::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -5px;
+  height: 80%;
+  border-left: 1.5px solid rgba(0, 0, 0, 0.2)
 }
 
 .card-information-text {
@@ -208,21 +235,33 @@ button:hover>svg>polygon {
   position: absolute;
   left: calc(70vw * 0.3);
   width: calc(70vw * 0.7);
-  background-color: rgb(100, 171, 79);
+  background-color: #4a86e8ff;
 }
-.card-front {
+.icons {
   position: relative;
-  height:100%;
-  width:100%;
+  bottom:-40%;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.card:hover .card-information {
-  width: 100%
+.icons p{
+  align-self:center;
+  font-size:10pt
 }
-#card0{
-  opacity:1;
-  z-index:1000;
+.icons a{
+  text-decoration:none
+}
+.hover-information {
+  vertical-align: bottom;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10pt;
 }
 
+.card-front {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 
 .card-instruction {
   position: absolute;
@@ -230,21 +269,15 @@ button:hover>svg>polygon {
   width: calc(70vw * 0.7);
   height: 100%;
   background-color: white;
-}
-section{
-  padding:25px;
-  text-align:center;
-  /*font-family: 'Open Sans';*/
-  font-family: 'Bowlby One SC', cursive;
-}
-.card-instruction > p{
-  font-size: 12pt;
-  bottom:5px;
-  left: 35px;
-  color: rgba(0,0,0,0.7);
-  text-align:bottom
+  z-index: 500;
 }
 
+section {
+  padding: 20 100px;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+  height: 75%;
+}
 
 .turn-out {
   animation: turn-out 1s ease-out forwards
@@ -253,13 +286,13 @@ section{
 @keyframes turn-out {
   0% {
     opacity: 1;
-    z-index:1000;
+    z-index: 1000;
   }
 
   /*50%{transform:translate3d(190px,0px,0px)}*/
   100% {
     opacity: 0;
-    z-index:0;
+    z-index: 0;
   }
 }
 
@@ -269,14 +302,19 @@ section{
 
 @keyframes turn-in {
   0% {
-    opacity:0;
-    z-index:0;
+    opacity: 0;
+    z-index: 0;
   }
 
   /*50%{transform:translate3d(-190px,0px,0px)}*/
   100% {
     opacity: 1;
-    z-index:1000;
+    z-index: 1000;
   }
 }
+
+@import "../assets/pin.css";
+@import "../assets/time.css";
+@import "../assets/smile.css";
+@import "../assets/download.css";
 </style>

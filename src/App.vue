@@ -3,27 +3,27 @@
   <div class="head">
     <div class="buttons">
       <div  class="button" v-on:click="new_view('start')"><a>Start</a></div>
-      <div  class="button" v-on:click="new_view('ressources')"><a>Ressources</a></div>
+      <div  class="button" v-on:click="new_view('cards')"><a>Cards</a></div>
       <div  class="button" v-on:click="new_view('information')"><a>Information</a></div>
     </div>
     <h1 class="header"v-on:click="new_view('start')">Arts and Mindfulness in Education</h1>
   </div>
   <div class="components">
     <Start v-if="view=='start'"></Start>
-    <Ressources v-if="view=='ressources'"></Ressources>
+    <Cards v-if="view=='cards'"></Cards>
     <Information v-if="view=='information'"></Information>
   </div>
 </div>
 </template>
 <script>
 import Start from "./components/Start.vue";
-import Ressources from "./components/Ressources.vue";
+import Cards from "./components/Cards.vue";
 import Information from "./components/Information.vue";
 export default {
   name: "app",
   components: {
     Start,
-    Ressources,
+    Cards,
     Information
   },
   created: function() {
