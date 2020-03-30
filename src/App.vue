@@ -98,11 +98,10 @@ h1 {
   justify-content: center
 }
 .head{
-  padding-top: 5vh;
+  padding-top: 2vh;
   height: 20vh
 }
 .components{
-  height:70vh;
-  scroll-snap-type: y mandatory;
+  height:80vh;
 }
 </style>

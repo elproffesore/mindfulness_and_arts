@@ -1,6 +1,6 @@
 <template>
 <div class="start_page">
-  <svg viewBox="0 0 1200 2500">
+  <svg viewBox="0 0 1200 2400">
     <path id="path" xmlns="http://www.w3.org/2000/svg" d="M-10,150  Q1050,250 1000,550 T 400,1000 T 700,1400 T 755,1940"  fill="none" />
   </svg>
   <div class="paragraphs">
@@ -13,7 +13,6 @@
             - Eckhart Tolle
         </p>
     </transition>
-
     <transition name="fade">
         <p v-if="percent > 0.4" id="paragraph2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. </p>
@@ -72,7 +71,9 @@ export default {
   position: relative;
   height: 2400px;
   z-index:-2;
-  overflow-x:hidden;
+}
+svg{
+  height:2400px;
 }
 .scroll{
   position:absolute;
@@ -148,15 +149,12 @@ footer > img {
   bottom:0px;
   left:-2px;
 }
-
-.fade-enter-active,
+ .fade-enter-active,
 .fade-leave-active {
   transition: opacity .75s;
 }
-
 .fade-enter,
 .fade-leave-to
-/* .fade-leave-active below version 2.1.8 */
   {
   opacity: 0;
 }
