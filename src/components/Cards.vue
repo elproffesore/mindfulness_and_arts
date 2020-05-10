@@ -11,9 +11,9 @@
 
     <div class="card-instruction">
       <section>
-        <h2>Instructions</h2>
-        <p v-for="instruction in card.instructions">
-          {{instruction}}
+        <h2>Information</h2>
+        <p>
+          {{card.information}}
         </p>
       </section>
       <p class="hover-information"> Hover to see more details </p>
@@ -27,21 +27,18 @@
       <div class="card-information-text">
         <section>
           <h2>Information</h2>
-          <div class="information">
-            <p>{{card.information}}</p>
-          </div>
           <div class="icons">
             <div>
               <i class="gg-pin"></i>
-              <p>Outside</p>
+              <p>{{card.specs.location}}</p>
             </div>
             <div>
               <i class="gg-time"></i>
-              <p>~15min</p>
+              <p>{{card.specs.time}}</p>
             </div>
             <div>
               <i class="gg-smile"></i>
-              <p>6+ years</p>
+              <p>{{card.specs.age}}</p>
             </div>
             <a v-bind:href="card.link" download>
               <i class="gg-software-download"></i>
@@ -79,21 +76,46 @@ export default {
             "Look around you, take deep breaths and listen carefully to the sounds around you.",
             "Take photos of everything that catches your attention"
           ],
-          information: "This excercise should sharpen the eye of the kids to notice \n new things around them"
+          information: "This excercise should sharpen the eye of the kids to notice new things around them",
+          specs:{time:"~45min",location:"Outside",age:"8+"}
         },
         {
           name:"clay",
           link:"./downloads/clay.png",
           picture: "./pics/clay_front.png",
           instructions: [
-            "Take a camera",
-            "Look around you, take deep breaths and listen carefully to the sounds around you.",
-            "Take photos of everything that catches your attention"
+            "Take a piece of clay",
+            "Listen to the music, take deep breaths, feel the texture of clay, keep your eyes closed or open and start to sculpt by your feeling",
+            "When you think you are finished open your eyes and see what you have sculpted"
           ],
-          information: {
+          information: "This excercise helps kids to explore their feelings and how to express them through art",
+          specs:{time:"~30min",location:"Inside or \n Outside",age:"4+"}
+        },
+        {
+          name:"instrument",
+          link:"./downloads/instruments.png",
+          picture: "./pics/instrument_front.png",
+          instructions: [
+            "Choose the instruments & take three deep breaths.",
+            "Teacher or a child is going to play an instrument and the others have to close their eyes, listen and guess it.",
+            "Comment their feelings about the activity. How was this exercise/game for you..."
+          ],
+          information: "This excercise helps kids to sharpen their ears and focus on the hearing.",
+          specs:{time:"~15min",location:"Inside",age:"5+"}
+        },
+        {
+          name:"shadow",
+          link:"./downloads/shadow.png",
+          picture: "./pics/shadow_front.png",
+          instructions: [
+            "Go to the playground and find your shadow.",
+            "Make all kinds of shapes and movements with your body.",
+            "Feel free to express your feelings."
+          ],
+          information: "This excercise helps kids to explore their imagination",
+          specs:{time:"~20min",location:"Inside or \n Outside",age:"5+"}
+        },
 
-          }
-        }
       ]
     }
   },
@@ -207,7 +229,7 @@ button:hover>svg>polygon {
   position: absolute;
   left: 0;
   background-color: white;
-  width: calc(70vw * 0.3);
+  width: calc(70vw * 0.35);
   transition: width 0.4s;
   height: 100%;
   overflow: hidden;
@@ -218,14 +240,14 @@ button:hover>svg>polygon {
 .card-information-card {
   height: 100%;
   position: absolute;
-  width: calc(70vw * 0.3);
+  width: calc(70vw * 0.35);
 }
 
 .card-information-card::after {
   content: "";
   position: absolute;
   top: 10%;
-  right: -5px;
+  right: -15px;
   height: 80%;
   border-left: 1.5px solid rgba(0, 0, 0, 0.2)
 }
@@ -233,13 +255,13 @@ button:hover>svg>polygon {
 .card-information-text {
   height: 100%;
   position: absolute;
-  left: calc(70vw * 0.3);
-  width: calc(70vw * 0.7);
+  left: calc(70vw * 0.35);
+  width: calc(70vw * 0.65);
   background-color: #4a86e8ff;
 }
 .icons {
   position: relative;
-  bottom:-40%;
+  bottom:-45%;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -251,6 +273,7 @@ button:hover>svg>polygon {
   text-decoration:none
 }
 .hover-information {
+  font-family: 'Open Sans';
   vertical-align: bottom;
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
@@ -266,7 +289,7 @@ button:hover>svg>polygon {
 .card-instruction {
   position: absolute;
   right: 0;
-  width: calc(70vw * 0.7);
+  width: calc(70vw * 0.65);
   height: 100%;
   background-color: white;
   z-index: 500;
@@ -313,8 +336,8 @@ section {
   }
 }
 
-@import "../assets/pin.css";
-@import "../assets/time.css";
-@import "../assets/smile.css";
-@import "../assets/download.css";
+@import "../assets/icons/pin.css";
+@import "../assets/icons/time.css";
+@import "../assets/icons/smile.css";
+@import "../assets/icons/download.css";
 </style>

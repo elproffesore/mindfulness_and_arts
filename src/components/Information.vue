@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="text">
-    <h2 class="header">The Problem</h2>
+    <h2 class="header">Challenges Nowadays</h2>
     <p>
       Today a lot of people feel more stressed and more people suffer from stress and anxiety symptoms.
 
@@ -17,7 +17,7 @@
 
       In consequence they often can't concentrate while they teach and sometimes have burnout syndromes due to high pressure which is produced by their fast paced environment.
     </p>
-    <h2 class="header">The Solution</h2>
+    <h2 class="header">How Mindfulness can help</h2>
     <p>
       In preschool, children at the age 3-6 years old are so nervous because of a lot of activities and changes happening during the day. So, how can we take the advantage of that time to relax them?
 

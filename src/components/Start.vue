@@ -132,6 +132,7 @@ p {
   font-family: 'Open Sans';
 }
 footer {
+  font-family: 'Open Sans';
   position: absolute;
   bottom: 0;
   width:100vw;
