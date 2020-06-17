@@ -1,17 +1,19 @@
 <template>
 <div class="main">
   <div class="head">
+    <img src="pics/logo.png" style="height:50px;position:absolute;left:2vw;top:2vw"alt="">
     <div class="buttons">
       <div  class="button" v-on:click="new_view('start')"><a>Start</a></div>
       <div  class="button" v-on:click="new_view('cards')"><a>Cards</a></div>
       <div  class="button" v-on:click="new_view('information')"><a>Information</a></div>
+      <div  class="button" v-on:click="new_view('about')"><a>About</a></div>
     </div>
-    <h1 class="header"v-on:click="new_view('start')">Arts and Mindfulness in Education</h1>
   </div>
   <div class="components">
     <Start v-if="view=='start'"></Start>
     <Cards v-if="view=='cards'"></Cards>
     <Information v-if="view=='information'"></Information>
+    <About v-if="view=='about'"></About>
   </div>
 </div>
 </template>
@@ -19,12 +21,14 @@
 import Start from "./components/Start.vue";
 import Cards from "./components/Cards.vue";
 import Information from "./components/Information.vue";
+import About from "./components/About.vue";
 export default {
   name: "app",
   components: {
     Start,
     Cards,
-    Information
+    Information,
+    About
   },
   created: function() {
     window.addEventListener('scroll', (e) => {
@@ -99,9 +103,9 @@ h1 {
 }
 .head{
   padding-top: 2vh;
-  height: 20vh
+  height: 5vh
 }
 .components{
-  height:80vh;
+  height:95vh;
 }
 </style>

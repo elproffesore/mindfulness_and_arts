@@ -1,5 +1,6 @@
 <template>
 <div class="cards">
+  <h1 class="header">Mindful exercise cards</h1>
   <button id="back" @click="turnCarouselBack()">
     <svg viewBox="0 0 20 20">
       <polygon points="0,10 20,20 20,0" fill="black" />
@@ -11,9 +12,9 @@
 
     <div class="card-instruction">
       <section>
-        <h2>Information</h2>
-        <p>
-          {{card.information}}
+        <h2>Instruction</h2>
+        <p v-for="(instruction) in card.instructions">
+          {{instruction}}
         </p>
       </section>
       <p class="hover-information"> Hover to see more details </p>
@@ -27,6 +28,9 @@
       <div class="card-information-text">
         <section>
           <h2>Information</h2>
+          <p>
+            {{card.information}}
+          </p>
           <div class="icons">
             <div>
               <i class="gg-pin"></i>
@@ -69,8 +73,8 @@ export default {
       selected: 0,
       cards: [{
           name:"photo",
-          link:"./downloads/Mindfulness_Photography.png",
-          picture: "./pics/photo_front.png",
+          link:"./downloads/mindful_photography.png",
+          picture: "./pics/photo.png",
           instructions: [
             "Take a camera",
             "Look around you, take deep breaths and listen carefully to the sounds around you.",
@@ -81,8 +85,8 @@ export default {
         },
         {
           name:"clay",
-          link:"./downloads/clay.png",
-          picture: "./pics/clay_front.png",
+          link:"./downloads/clay_activity.png",
+          picture: "./pics/clay.png",
           instructions: [
             "Take a piece of clay",
             "Listen to the music, take deep breaths, feel the texture of clay, keep your eyes closed or open and start to sculpt by your feeling",
@@ -93,8 +97,8 @@ export default {
         },
         {
           name:"instrument",
-          link:"./downloads/instruments.png",
-          picture: "./pics/instrument_front.png",
+          link:"./downloads/whats_playing.png",
+          picture: "./pics/whats.png",
           instructions: [
             "Choose the instruments & take three deep breaths.",
             "Teacher or a child is going to play an instrument and the others have to close their eyes, listen and guess it.",
@@ -105,8 +109,8 @@ export default {
         },
         {
           name:"shadow",
-          link:"./downloads/shadow.png",
-          picture: "./pics/shadow_front.png",
+          link:"./downloads/body_shadows.png",
+          picture: "./pics/shadow.png",
           instructions: [
             "Go to the playground and find your shadow.",
             "Make all kinds of shapes and movements with your body.",
@@ -172,14 +176,14 @@ export default {
 #back {
   z-index: 1000;
   position: absolute;
-  top: calc(30vh - (20px / 2));
+  top: calc(45vh - (20px / 2));
   left: 10%;
 }
 
 #next {
   z-index: 1000;
   position: absolute;
-  top: calc(30vh - (20px / 2));
+  top: calc(45vh - (20px / 2));
   right: 10%;
 }
 
@@ -311,8 +315,6 @@ section {
     opacity: 1;
     z-index: 1000;
   }
-
-  /*50%{transform:translate3d(190px,0px,0px)}*/
   100% {
     opacity: 0;
     z-index: 0;
@@ -328,8 +330,6 @@ section {
     opacity: 0;
     z-index: 0;
   }
-
-  /*50%{transform:translate3d(-190px,0px,0px)}*/
   100% {
     opacity: 1;
     z-index: 1000;

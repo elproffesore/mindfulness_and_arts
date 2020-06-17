@@ -1,26 +1,20 @@
 <template>
 <div class="start_page">
+  <h1 class="header">Arts and Mindfulness in Education</h1>
   <svg viewBox="0 0 1200 2400">
-    <path id="path" xmlns="http://www.w3.org/2000/svg" d="M-10,150  Q1050,250 1000,550 T 400,1000 T 700,1400 T 755,1940"  fill="none" />
+    <path id="path" xmlns="http://www.w3.org/2000/svg" d="M-10,150  Q1050,250 1000,550 T 400,1000 T 700,1400 T 2000,1940"  fill="none" />
   </svg>
   <div class="paragraphs">
-    <transition name="fade">
-        <p v-if="percent > 0.10" id="paragraph1">
-          <q>
-            <i>In today's rush, we all think too much - seek too much - want too much - and forget about the joy of just being.
-            </i>
-          </q>
-            - Eckhart Tolle
-        </p>
-    </transition>
-    <transition name="fade">
-        <p v-if="percent > 0.4" id="paragraph2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. </p>
-    </transition>
-    <transition name="fade">
-        <p v-if="percent > 0.7" id="paragraph3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. </p>
-    </transition>
+    <p v-bind:style="'opacity:'+ percent*4" id="paragraph1">
+      <q>
+        <i>Mindfulness means paying attention in a particular way; on purpose, in the present moment, and nonjudgmentally.
+        </i>
+      </q>
+      <br>
+        - Jon Kabat-Zinn (1994)
+    </p>
+        <p v-bind:style="'opacity:'+ (percent-0.15)*4" id="paragraph2">Mindfulness education is  the purposeful inclusion of mindfulness and mindful meditation principles, theories, and practices into education. It integrates topics such as empathy, self-awareness or techniques to calm and focus the mind.</p>
+        <p v-bind:style="'opacity:'+ (percent-0.3)*4"  id="paragraph3">Using art based mindfulness helps children enjoy the process of making art rather than focusing on the end result. Doing activities like photography, drawing, body movement and even just listening in a more aware, focused way makes children cultivate self awareness and helps them recognize and embrace their emotions. </p>
   </div>
   <div id="blatt" v-bind:style="{transform:getPosition}">
     <img src="pics/leaf.svg" />
@@ -34,7 +28,7 @@
   </transition>
   <footer>
     <img src="pics/hill.svg" />
-    <p>AMiE is a Project from the European Project Semester of AP University Antwerp</p>
+    <p>AMiE is a Project from the European Project Semester at AP University Antwerp</p>
   </footer>
 </div>
 </template>
@@ -73,13 +67,14 @@ export default {
   z-index:-2;
 }
 svg{
-  height:2400px;
+  height:2200px;
+  width: 100%;
 }
 .scroll{
   position:absolute;
   height:30px;
   width:30px;
-  top:60vh;
+  top:80vh;
   left:calc(50% - 30px);
   animation-name: pointToScroll;
   animation-duration: 0.75s;
@@ -107,7 +102,7 @@ p {
 
 #paragraph1 {
   position: absolute;
-  top: 15%;
+  top: 20%;
   right: 10%;
   width: 30vw;
   font-size: 14pt;
@@ -116,7 +111,7 @@ p {
 
 #paragraph2 {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 10%;
   width: 30vw;
   font-size: 14pt;
@@ -125,8 +120,8 @@ p {
 
 #paragraph3 {
   position: absolute;
-  top: 60%;
-  right: 15%;
+  top: 40%;
+  right: 10%;
   width: 30vw;
   font-size: 14pt;
   font-family: 'Open Sans';

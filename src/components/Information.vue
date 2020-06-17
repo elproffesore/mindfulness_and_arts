@@ -1,36 +1,32 @@
 <template>
 <div>
-  <div class="text">
-    <h2 class="header">Challenges Nowadays</h2>
-    <p>
-      Today a lot of people feel more stressed and more people suffer from stress and anxiety symptoms.
+  <h1 class="header">The Origin of Mindfulness</h1>
+  <div class="information-wrapper">
+    <img class="pics" src="pics/Monk.png">
+    <p>Here you can see a traditional buddhist monk meditating. He is sitting and has closed his eyes
+    to keep himself from distractions. Buddhist monks where one of the first monks who practiced mindfulness on a daily basis and build their lifes around it.
+    Their goal is to get enlighted and attain wisdom. </p>
+    <img src="pics/conversation1.png" style="grid-column: 1 / span 2;height:600px;margin:-80px" />
+    <img src="pics/conversation2.png" style="grid-column: 1 / span 2;height:600px;margin-left:-80px" />
+    <img src="pics/teacher.png" style="height:300px" >
+    <ol>
+      <li>Better management of stress and anxiety, making us relate better to these
+feelings</li>
+<br>
+ <li>Better identification of our emotions, helping us to understand that we should
+not run away from our feelings, only accept them</li>
+<br>
+<li>Improves the attention and teaches us to put aside information that is not necessary or that distracts us.</li>
 
-      Also kids are affected of this. Nowadays, kids have a lot of stimulus and in consequence, they are always distracted
+    </ol>
+      <img src="pics/paperplane.png" style="grid-column: 1 / span 2;height:600px;margin-top:-100px" >
+  <p style="grid-column: 1 / span 2;margin-top:-100px">Introducing mindfulness to children can be done in many ways. Our goal is to  introduce art based mindfulness which can benefit kids in so many ways. Children in preschool and primary education are in the process of development. In this time they are learning how to cultivate self-awareness, awareness of others and the world. To be aware of themselves and others they first need to know how to be present and that is what mindfulness teaches them.
+Art is the form in which children are most comfortable with and where their creativity flows. Combining it with mindfulness results in a playful, easy and creative way to make children acknowledge their thoughts and emotions.
+<br>
+<br>
+“Art has the role in education of helping children become like themselves instead of more like everyone else.” - Sydney Guerewitz Clemens
+</p>
 
-      and they aren't used to be calm and relaxed. New technologies are a very useful tool for kids, but they are also a big distraction for them.
-
-      Their ability to concentrate and focus on long term goals suffer from fast rewarding systems of mobile apps.
-
-      Teachers are affected too, because each time is harder to them to maintain the kids focus on one task or on the lesson.
-
-      The multitasking also drains cognitive energy to multiple tasks which directly affects the ability to concentrate for a longer time on one specific task.
-
-      In consequence they often can't concentrate while they teach and sometimes have burnout syndromes due to high pressure which is produced by their fast paced environment.
-    </p>
-    <h2 class="header">How Mindfulness can help</h2>
-    <p>
-      In preschool, children at the age 3-6 years old are so nervous because of a lot of activities and changes happening during the day. So, how can we take the advantage of that time to relax them?
-
-      Mindfulness is a tool that we can usually use to gain the full attention and concentration from children, it can be useful to improve the process and
-
-      acknowledgement of their emotions, which is so important in that age to train their brains to regulate and manage stressful situations and reduce them.
-
-      In conclusion, it is a way to gain positives thoughts for children and the teacher and finally, to create a more peaceful environment.
-
-      Also the transition from kindergarten to primary school can be very stressful for the children. Some of them adjust very easily but others face a lot of anxiety and insecurities.
-
-      Mindfulness can help them get in a more comfortable and safe state. If they get to that state of mind it makes the teaching process much easier and enjoyable both for teacher and children.
-    </p>
   </div>
 </div>
 </template>
@@ -41,6 +37,22 @@ export default {
 </script>
 
 <style module>
+.information-wrapper{
+  display: grid;
+  grid-template-columns: 400px 500px;
+  grid-row-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  margin: 50px 100px;
+
+}
+.pics{
+  height:300px;
+}
+.kid{
+  height:250px;
+  }
 .text {
   text-align:center;
   display: grid;
@@ -50,11 +62,36 @@ export default {
   justify-content: center;
   grid-column-gap: 100px;
 }
-.text > p{
+.text > p,li{
   align-self: center;
   text-align:justify;
   font-family: 'Open Sans';
   font-size: 14pt;
+}
+.bubble {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 300px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
 }
 @media only screen and (max-width:700px){
   .text {
